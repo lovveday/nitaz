@@ -1,0 +1,488 @@
+
+<h2 class="sr-only">Nitaz Official — 6 promotional video treatments and shot lists for outdoor hotel shoot, three videos per dress</h2>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+.wrap { padding: 1rem 0; font-family: var(--font-sans); }
+
+.top-nav { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 1.5rem; }
+.tnav { font-size: 13px; padding: 7px 16px; border-radius: var(--border-radius-md); border: 0.5px solid var(--color-border-tertiary); background: var(--color-background-primary); color: var(--color-text-secondary); cursor: pointer; }
+.tnav.active { background: var(--color-text-primary); color: var(--color-background-primary); border-color: var(--color-text-primary); font-weight: 500; }
+
+.dress-tabs { display: flex; gap: 8px; margin-bottom: 1.25rem; }
+.dtab { font-size: 12px; padding: 6px 16px; border-radius: 20px; border: 0.5px solid var(--color-border-tertiary); background: var(--color-background-primary); color: var(--color-text-secondary); cursor: pointer; }
+.dtab.black.active { background: #1a1a1a; color: #fff; border-color: #1a1a1a; }
+.dtab.white.active { background: #F4C0D1; color: #4B1528; border-color: #D4537E; }
+
+.view { display: none; }
+.view.active { display: block; }
+
+.dress-panel { display: none; }
+.dress-panel.active { display: block; }
+
+.video-card { border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); margin-bottom: 1.25rem; overflow: hidden; }
+.video-header { padding: 14px 16px; border-bottom: 0.5px solid var(--color-border-tertiary); display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.video-header.black-dress { background: #1a1a1a; }
+.video-header.white-dress { background: #FBEAF0; }
+.vh-left { flex: 1; }
+.video-num { font-size: 11px; font-weight: 500; margin-bottom: 4px; }
+.black-dress .video-num { color: #aaa; }
+.white-dress .video-num { color: #72243E; }
+.video-title { font-size: 15px; font-weight: 500; }
+.black-dress .video-title { color: #fff; }
+.white-dress .video-title { color: #26215C; }
+.video-meta { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 6px; }
+.vmeta-pill { font-size: 10px; padding: 2px 8px; border-radius: 10px; font-weight: 500; }
+.black-dress .vmeta-pill { background: rgba(255,255,255,0.12); color: #ddd; }
+.white-dress .vmeta-pill { background: #F4C0D1; color: #4B1528; }
+.mood-pill { font-size: 10px; padding: 2px 8px; border-radius: 10px; }
+.mood-cinematic { background: #EEEDFE; color: #3C3489; }
+.mood-fun { background: #EAF3DE; color: #27500A; }
+.mood-both { background: #FAEEDA; color: #633806; }
+.video-body { padding: 0; }
+
+.section-block { padding: 14px 16px; border-bottom: 0.5px solid var(--color-border-tertiary); }
+.section-block:last-child { border-bottom: none; }
+.section-label { font-size: 10px; font-weight: 500; color: var(--color-text-tertiary); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 8px; }
+.treatment-text { font-size: 13px; color: var(--color-text-secondary); line-height: 1.7; }
+.treatment-text strong { font-weight: 500; color: var(--color-text-primary); }
+
+.shot-table { width: 100%; border-collapse: collapse; }
+.shot-table th { font-size: 10px; font-weight: 500; color: var(--color-text-tertiary); text-align: left; padding: 0 8px 8px 0; border-bottom: 0.5px solid var(--color-border-tertiary); }
+.shot-table td { font-size: 11px; color: var(--color-text-secondary); padding: 8px 8px 8px 0; border-bottom: 0.5px solid var(--color-border-tertiary); vertical-align: top; line-height: 1.5; }
+.shot-table tr:last-child td { border-bottom: none; }
+.shot-num { font-weight: 500; color: var(--color-text-primary); min-width: 28px; }
+.shot-type { white-space: nowrap; }
+.type-badge { font-size: 9px; padding: 2px 6px; border-radius: 6px; background: var(--color-background-secondary); color: var(--color-text-secondary); white-space: nowrap; display: inline-block; }
+.loc-badge { font-size: 9px; padding: 2px 6px; border-radius: 6px; background: #E6F1FB; color: #0C447C; white-space: nowrap; display: inline-block; }
+
+.props-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 8px; }
+.prop-item { background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 8px 10px; font-size: 12px; color: var(--color-text-secondary); display: flex; gap: 7px; align-items: flex-start; }
+.prop-item i { color: var(--color-text-tertiary); margin-top: 1px; font-size: 14px; flex-shrink: 0; }
+
+.talent-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px; }
+.talent-card { background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 10px 12px; }
+.talent-role { font-size: 11px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 3px; }
+.talent-notes { font-size: 11px; color: var(--color-text-secondary); line-height: 1.5; }
+
+.overview-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin-bottom: 1.5rem; }
+.ov-card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 12px 14px; }
+.ov-label { font-size: 11px; color: var(--color-text-secondary); margin-bottom: 4px; }
+.ov-val { font-size: 14px; font-weight: 500; color: var(--color-text-primary); line-height: 1.4; }
+
+.timeline-block { }
+.tl-row { display: grid; grid-template-columns: 80px 1fr; gap: 12px; padding: 10px 0; border-bottom: 0.5px solid var(--color-border-tertiary); align-items: start; }
+.tl-row:last-child { border-bottom: none; }
+.tl-time { font-size: 12px; font-weight: 500; color: var(--color-text-primary); }
+.tl-desc { font-size: 12px; color: var(--color-text-secondary); line-height: 1.5; }
+.tl-badge { font-size: 10px; padding: 1px 6px; border-radius: 8px; background: #FAEEDA; color: #633806; display: inline-block; margin-top: 3px; }
+</style>
+
+<div class="wrap">
+  <div class="top-nav">
+    <button class="tnav active" onclick="switchView('treatments', this)">Treatments</button>
+    <button class="tnav" onclick="switchView('shotlist', this)">Shot lists</button>
+    <button class="tnav" onclick="switchView('shootday', this)">Shoot day overview</button>
+  </div>
+
+  <!-- TREATMENTS VIEW -->
+  <div class="view active" id="view-treatments">
+    <div class="dress-tabs">
+      <button class="dtab black active" onclick="switchDress('black', this, 'treatments')">Black dress — 3 videos</button>
+      <button class="dtab white" onclick="switchDress('white', this, 'treatments')">White dress — 3 videos</button>
+    </div>
+
+    <div class="dress-panel active" id="treatments-black">
+
+      <!-- BLACK VIDEO 1 -->
+      <div class="video-card">
+        <div class="video-header black-dress">
+          <div class="vh-left">
+            <div class="video-num">Black dress · Video 1 of 3</div>
+            <div class="video-title">"The dinner"</div>
+            <div class="video-meta">
+              <span class="vmeta-pill">Anniversary dinner</span>
+              <span class="vmeta-pill">Hotel restaurant</span>
+              <span class="mood-pill mood-both">Fun + cinematic</span>
+            </div>
+          </div>
+        </div>
+        <div class="video-body">
+          <div class="section-block">
+            <div class="section-label">Treatment</div>
+            <div class="treatment-text">A couple's anniversary dinner at a fine hotel restaurant. Nitaz walks in wearing the black embellished dress. The room notices. A nearby husband cannot stop staring — his wife has to slap his hand to get his attention back. Nitaz's own husband pulls out her chair, his eyes fixed on her the entire time. The mood is warm, confident, and slightly playful. The dress is the reason the room shifts. <strong>The message: wear Nitaz and own every room you walk into.</strong></div>
+          </div>
+          <div class="section-block">
+            <div class="section-label">Talent needed</div>
+            <div class="talent-grid">
+              <div class="talent-card"><div class="talent-role">Nitaz</div><div class="talent-notes">Lead. Walks in, sits, commands the room. Confident, unbothered energy.</div></div>
+              <div class="talent-card"><div class="talent-role">Nitaz's husband</div><div class="talent-notes">Pulls out her chair. Admiring look throughout. Proud energy.</div></div>
+              <div class="talent-card"><div class="talent-role">Prop couple (man)</div><div class="talent-notes">Seated at nearby table. Eyes follow Nitaz. Gets slapped by wife. Comedic timing.</div></div>
+              <div class="talent-card"><div class="talent-role">Prop couple (woman)</div><div class="talent-notes">Notices her husband staring. Hand slap. Jealous but funny, not mean.</div></div>
+            </div>
+          </div>
+          <div class="section-block">
+            <div class="section-label">Props and setup</div>
+            <div class="props-grid">
+              <div class="prop-item"><i class="ti ti-tool-kitchen-2" aria-hidden="true"></i>Dressed dining table — candles, wine glasses, plates</div>
+              <div class="prop-item"><i class="ti ti-heart" aria-hidden="true"></i>Small anniversary card or flowers on the table</div>
+              <div class="prop-item"><i class="ti ti-door-enter" aria-hidden="true"></i>Clear entrance walkway for Nitaz's arrival shot</div>
+              <div class="prop-item"><i class="ti ti-users" aria-hidden="true"></i>Prop couple seated 1–2 tables away, visible in frame</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BLACK VIDEO 2 -->
+      <div class="video-card">
+        <div class="video-header black-dress">
+          <div class="vh-left">
+            <div class="video-num">Black dress · Video 2 of 3</div>
+            <div class="video-title">"The birthday entrance"</div>
+            <div class="video-meta">
+              <span class="vmeta-pill">Milestone birthday</span>
+              <span class="vmeta-pill">Hotel lobby or garden</span>
+              <span class="mood-pill mood-cinematic">Cinematic</span>
+            </div>
+          </div>
+        </div>
+        <div class="video-body">
+          <div class="section-block">
+            <div class="section-label">Treatment</div>
+            <div class="treatment-text">It is someone's 40th. The party is already going. Then she arrives. No big announcement. Just the entrance — slow, deliberate, dress catching the light. Guests turn. Phones come out. A friend rushes to hug her and compliment the dress. No dialogue needed. <strong>The message: your birthday is a moment. Dress for it.</strong></div>
+          </div>
+          <div class="section-block">
+            <div class="section-label">Talent needed</div>
+            <div class="talent-grid">
+              <div class="talent-card"><div class="talent-role">Nitaz</div><div class="talent-notes">The birthday woman. Confident entrance. Warm smile when greeted. She knows she looks good.</div></div>
+              <div class="talent-card"><div class="talent-role">2–3 background guests</div><div class="talent-notes">Already in the space. React naturally — turn, look, pull out phones, nudge each other.</div></div>
+              <div class="talent-card"><div class="talent-role">One close friend</div><div class="talent-notes">Rushes to hug Nitaz. Can mouth "oh my god" or similar. Big reaction.</div></div>
+            </div>
+          </div>
+          <div class="section-block">
+            <div class="section-label">Props and setup</div>
+            <div class="props-grid">
+              <div class="prop-item"><i class="ti ti-balloons" aria-hidden="true"></i>Subtle birthday decor — not over the top, just anchors the occasion</div>
+              <div class="prop-item"><i class="ti ti-device-mobile" aria-hidden="true"></i>Guests with phones ready to "capture" the moment</div>
+              <div class="prop-item"><i class="ti ti-stairs" aria-hidden="true"></i>Staircase or corridor entrance for dramatic arrival angle</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BLACK VIDEO 3 -->
+      <div class="video-card">
+        <div class="video-header black-dress">
+          <div class="vh-left">
+            <div class="video-num">Black dress · Video 3 of 3</div>
+            <div class="video-title">"Getting ready"</div>
+            <div class="video-meta">
+              <span class="vmeta-pill">Behind the moment</span>
+              <span class="vmeta-pill">Hotel room or corridor</span>
+              <span class="mood-pill mood-cinematic">Cinematic</span>
+            </div>
+          </div>
+        </div>
+        <div class="video-body">
+          <div class="section-block">
+            <div class="section-label">Treatment</div>
+            <div class="treatment-text">No occasion named. Just the ritual of getting ready for one. Nitaz in the hotel room — dress laid out on the bed, she steps into it, zips up, looks in the mirror, and walks out the door. Close-ups of embellishment detail as she gets dressed. The final shot is her hand pressing the lift button — she is ready. <strong>The message: every special occasion starts with the dress. This is the dress.</strong></div>
+          </div>
+          <div class="section-block">
+            <div class="section-label">Talent needed</div>
+            <div class="talent-grid">
+              <div class="talent-card"><div class="talent-role">Nitaz</div><div class="talent-notes">Solo. Calm, intentional energy. No performance — just the quiet confidence of a woman who knows she is about to walk into a room.</div></div>
+            </div>
+          </div>
+          <div class="section-block">
+            <div class="section-label">Props and setup</div>
+            <div class="props-grid">
+              <div class="prop-item"><i class="ti ti-hanger" aria-hidden="true"></i>Dress on bed or hanger before she puts it on</div>
+              <div class="prop-item"><i class="ti ti-mirror" aria-hidden="true"></i>Full-length mirror for the "look" moment</div>
+              <div class="prop-item"><i class="ti ti-perfume" aria-hidden="true"></i>Perfume, jewellery, bag on dressing table as atmosphere</div>
+              <div class="prop-item"><i class="ti ti-door-exit" aria-hidden="true"></i>Hotel corridor and lift button for final exit shot</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WHITE DRESS TREATMENTS -->
+    <div class="dress-panel" id="treatments-white">
+
+      <!-- WHITE VIDEO 1 -->
+      <div class="video-card">
+        <div class="video-header white-dress">
+          <div class="vh-left">
+            <div class="video-num">White dress · Video 1 of 3</div>
+            <div class="video-title">"The garden reception"</div>
+            <div class="video-meta">
+              <span class="vmeta-pill">Wedding guest</span>
+              <span class="vmeta-pill">Hotel garden or outdoor space</span>
+              <span class="mood-pill mood-cinematic">Cinematic</span>
+            </div>
+          </div>
+        </div>
+        <div class="video-body">
+          <div class="section-block">
+            <div class="section-label">Treatment</div>
+            <div class="treatment-text">A wedding reception in the hotel garden. Nitaz is not the bride — she is the guest who steals the room. She moves through the space naturally — greeting people, laughing, holding a glass. The camera finds her the way guests' eyes do: effortlessly. The white dress against the outdoor light is the visual hook. <strong>The message: even as a guest, a Nitaz woman is unforgettable.</strong></div>
+          </div>
+          <div class="section-block">
+            <div class="section-label">Talent needed</div>
+            <div class="talent-grid">
+              <div class="talent-card"><div class="talent-role">Nitaz</div><div class="talent-notes">Wedding guest energy — warm, social, effortless. Not performing, just existing beautifully in the space.</div></div>
+              <div class="talent-card"><div class="talent-role">2–3 background guests</div><div class="talent-notes">Milling around, dressed up. React to Nitaz naturally — admiring glances, small compliments.</div></div>
+            </div>
+          </div>
+          <div class="section-block">
+            <div class="section-label">Props and setup</div>
+            <div class="props-grid">
+              <div class="prop-item"><i class="ti ti-glass-champagne" aria-hidden="true"></i>Champagne or mocktail glass in hand for one scene</div>
+              <div class="prop-item"><i class="ti ti-flower" aria-hidden="true"></i>Garden flowers or greenery as natural backdrop</div>
+              <div class="prop-item"><i class="ti ti-sun" aria-hidden="true"></i>Shoot in natural light — golden hour if possible</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- WHITE VIDEO 2 -->
+      <div class="video-card">
+        <div class="video-header white-dress">
+          <div class="vh-left">
+            <div class="video-num">White dress · Video 2 of 3</div>
+            <div class="video-title">"The proposal dinner"</div>
+            <div class="video-meta">
+              <span class="vmeta-pill">Life milestone</span>
+              <span class="vmeta-pill">Hotel restaurant</span>
+              <span class="mood-pill mood-both">Fun + cinematic</span>
+            </div>
+          </div>
+        </div>
+        <div class="video-body">
+          <div class="section-block">
+            <div class="section-label">Treatment</div>
+            <div class="treatment-text">A romantic dinner. The man reaches into his jacket pocket. She does not know what is coming. He gets on one knee. She covers her mouth — genuinely overwhelmed. Around them, the restaurant reacts. But the camera keeps coming back to her — her dress, her face, her moment. <strong>The message: for life's most unexpected beautiful moments, you should already be dressed for it.</strong></div>
+          </div>
+          <div class="section-block">
+            <div class="section-label">Talent needed</div>
+            <div class="talent-grid">
+              <div class="talent-card"><div class="talent-role">Nitaz</div><div class="talent-notes">The woman being proposed to. Genuine surprise and joy. This video lives or dies on her reaction.</div></div>
+              <div class="talent-card"><div class="talent-role">Nitaz's husband</div><div class="talent-notes">Plays the man proposing. Gets on one knee. Warm, loving energy.</div></div>
+              <div class="talent-card"><div class="talent-role">Background diners</div><div class="talent-notes">React to the proposal — clap, smile, take out phones.</div></div>
+            </div>
+          </div>
+          <div class="section-block">
+            <div class="section-label">Props and setup</div>
+            <div class="props-grid">
+              <div class="prop-item"><i class="ti ti-diamond" aria-hidden="true"></i>Ring box — does not need a real ring, just needs to look the part</div>
+              <div class="prop-item"><i class="ti ti-candle" aria-hidden="true"></i>Romantic table setting — candles, roses, wine</div>
+              <div class="prop-item"><i class="ti ti-heart" aria-hidden="true"></i>Intimate corner table so the scene feels private but visible</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- WHITE VIDEO 3 -->
+      <div class="video-card">
+        <div class="video-header white-dress">
+          <div class="vh-left">
+            <div class="video-num">White dress · Video 3 of 3</div>
+            <div class="video-title">"She walked in and the room knew"</div>
+            <div class="video-meta">
+              <span class="vmeta-pill">Brand film</span>
+              <span class="vmeta-pill">Full hotel — lobby, garden, restaurant</span>
+              <span class="mood-pill mood-cinematic">Cinematic</span>
+            </div>
+          </div>
+        </div>
+        <div class="video-body">
+          <div class="section-block">
+            <div class="section-label">Treatment</div>
+            <div class="treatment-text">This is the brand film. No specific occasion — all occasions. Nitaz moves through different spaces of the hotel: the lobby, the garden, the restaurant. In each space, people notice. The edit is fast-paced and confident, cut to music. No dialogue. Ends on a single line on screen: <strong>"Timeless elegance. Nitaz."</strong> This is the video that goes on the profile, on the website, everywhere. It is the identity film for the white dress.</div>
+          </div>
+          <div class="section-block">
+            <div class="section-label">Talent needed</div>
+            <div class="talent-grid">
+              <div class="talent-card"><div class="talent-role">Nitaz</div><div class="talent-notes">Pure presence. Three different spaces, three different micro-moments. Same dress, same energy throughout.</div></div>
+              <div class="talent-card"><div class="talent-role">Background talent</div><div class="talent-notes">Different people in each location reacting differently — admiration, double-take, whisper to a friend.</div></div>
+            </div>
+          </div>
+          <div class="section-block">
+            <div class="section-label">Props and setup</div>
+            <div class="props-grid">
+              <div class="prop-item"><i class="ti ti-building" aria-hidden="true"></i>Hotel lobby — clean, grand entrance shot</div>
+              <div class="prop-item"><i class="ti ti-trees" aria-hidden="true"></i>Garden — movement shot, natural light</div>
+              <div class="prop-item"><i class="ti ti-tool-kitchen-2" aria-hidden="true"></i>Restaurant — seated, composed, commanding</div>
+              <div class="prop-item"><i class="ti ti-typography" aria-hidden="true"></i>End card: "Timeless elegance. Nitaz." on screen</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SHOT LIST VIEW -->
+  <div class="view" id="view-shotlist">
+    <div class="dress-tabs">
+      <button class="dtab black active" onclick="switchDress('black', this, 'shotlist')">Black dress</button>
+      <button class="dtab white" onclick="switchDress('white', this, 'shotlist')">White dress</button>
+    </div>
+
+    <div class="dress-panel active" id="shotlist-black">
+      <div class="video-card">
+        <div class="video-header black-dress"><div class="vh-left"><div class="video-num">Black dress · Video 1</div><div class="video-title">"The dinner" — shot list</div></div></div>
+        <div class="section-block">
+          <table class="shot-table">
+            <tr><th>#</th><th>Shot type</th><th>Location</th><th>What happens in frame</th><th>Notes</th></tr>
+            <tr><td class="shot-num">1</td><td><span class="type-badge">Wide</span></td><td><span class="loc-badge">Restaurant entrance</span></td><td>Nitaz appears at the entrance, pauses for a beat, then begins walking in</td><td>Slow motion. Capture the full dress — length, embellishment, movement.</td></tr>
+            <tr><td class="shot-num">2</td><td><span class="type-badge">Close-up</span></td><td><span class="loc-badge">Entrance floor</span></td><td>Her heels stepping onto the restaurant floor, dress hem visible</td><td>Low angle. Embellishment catches light as she walks.</td></tr>
+            <tr><td class="shot-num">3</td><td><span class="type-badge">Medium</span></td><td><span class="loc-badge">Restaurant floor</span></td><td>Prop couple seated. Man's eyes drift toward Nitaz off-camera. His wife is talking, doesn't notice yet.</td><td>Hold this shot — let the distraction build naturally.</td></tr>
+            <tr><td class="shot-num">4</td><td><span class="type-badge">Close-up</span></td><td><span class="loc-badge">Prop couple table</span></td><td>Wife notices husband's gaze. She slaps his hand on the table.</td><td>The comedic beat. Must be clearly readable. Reaction shot after the slap.</td></tr>
+            <tr><td class="shot-num">5</td><td><span class="type-badge">Medium</span></td><td><span class="loc-badge">Their table</span></td><td>Nitaz's husband stands, eyes fixed on her, pulls out her chair</td><td>Warm and admiring. He is proud. Hold on his expression.</td></tr>
+            <tr><td class="shot-num">6</td><td><span class="type-badge">Close-up</span></td><td><span class="loc-badge">Their table</span></td><td>Nitaz sits, smooths her dress, looks across the table at her husband</td><td>Slow and deliberate. Close on the embellishment detail as she sits.</td></tr>
+            <tr><td class="shot-num">7</td><td><span class="type-badge">Wide</span></td><td><span class="loc-badge">Full restaurant</span></td><td>Pull-back wide shot — Nitaz seated, restaurant carrying on around her, but the energy is hers</td><td>End frame. Hold for 3 seconds. Can cut brand card here.</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-header black-dress"><div class="vh-left"><div class="video-num">Black dress · Video 2</div><div class="video-title">"The birthday entrance" — shot list</div></div></div>
+        <div class="section-block">
+          <table class="shot-table">
+            <tr><th>#</th><th>Shot type</th><th>Location</th><th>What happens in frame</th><th>Notes</th></tr>
+            <tr><td class="shot-num">1</td><td><span class="type-badge">Wide</span></td><td><span class="loc-badge">Garden or lobby</span></td><td>Guests mingling in background. Space feels alive. Nitaz not yet in frame.</td><td>Establish the party atmosphere before she arrives.</td></tr>
+            <tr><td class="shot-num">2</td><td><span class="type-badge">Wide</span></td><td><span class="loc-badge">Entrance</span></td><td>Nitaz appears at the doorway. Pauses. Dress in full view.</td><td>Capture from slightly low angle to elongate the silhouette.</td></tr>
+            <tr><td class="shot-num">3</td><td><span class="type-badge">Close-up</span></td><td><span class="loc-badge">Embellishment detail</span></td><td>Camera finds the embellishment — sparkle, texture, craftsmanship</td><td>The dress has a moment of its own here. Slow pan across the detail.</td></tr>
+            <tr><td class="shot-num">4</td><td><span class="type-badge">Medium</span></td><td><span class="loc-badge">Guest group</span></td><td>Two guests nudge each other, look toward Nitaz, exchange a glance</td><td>No dialogue. Reaction says everything.</td></tr>
+            <tr><td class="shot-num">5</td><td><span class="type-badge">Medium</span></td><td><span class="loc-badge">Entrance</span></td><td>One guest rushes to meet Nitaz — big hug, visible delight</td><td>Warm and real. Let this moment breathe.</td></tr>
+            <tr><td class="shot-num">6</td><td><span class="type-badge">Wide</span></td><td><span class="loc-badge">Full space</span></td><td>Nitaz walks further into the party, the space opens up around her</td><td>Tracking shot if possible. Follow her from behind or side.</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-header black-dress"><div class="vh-left"><div class="video-num">Black dress · Video 3</div><div class="video-title">"Getting ready" — shot list</div></div></div>
+        <div class="section-block">
+          <table class="shot-table">
+            <tr><th>#</th><th>Shot type</th><th>Location</th><th>What happens in frame</th><th>Notes</th></tr>
+            <tr><td class="shot-num">1</td><td><span class="type-badge">Close-up</span></td><td><span class="loc-badge">Hotel room</span></td><td>Dress laid flat on the bed, embellishment visible, untouched</td><td>Still shot. Beauty and anticipation. Like a magazine spread.</td></tr>
+            <tr><td class="shot-num">2</td><td><span class="type-badge">Close-up</span></td><td><span class="loc-badge">Dressing table</span></td><td>Nitaz's hands — perfume, jewellery, the small rituals of getting ready</td><td>Slow and deliberate. No face needed yet.</td></tr>
+            <tr><td class="shot-num">3</td><td><span class="type-badge">Medium</span></td><td><span class="loc-badge">Hotel room</span></td><td>Nitaz steps into the dress, zips up or buttons up</td><td>Shoot from behind if zip detail is beautiful. From side if silhouette matters more.</td></tr>
+            <tr><td class="shot-num">4</td><td><span class="type-badge">Close-up</span></td><td><span class="loc-badge">Mirror</span></td><td>Her eyes in the mirror. She looks at herself. A small, quiet smile.</td><td>No vanity — just a woman who knows she is ready.</td></tr>
+            <tr><td class="shot-num">5</td><td><span class="type-badge">Wide</span></td><td><span class="loc-badge">Mirror / room</span></td><td>Full reflection — the complete look for the first time in frame</td><td>Hold this shot. This is the reveal.</td></tr>
+            <tr><td class="shot-num">6</td><td><span class="type-badge">Close-up</span></td><td><span class="loc-badge">Hotel corridor</span></td><td>Her hand presses the lift button. She is leaving.</td><td>Final shot. Suggests the occasion without showing it.</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="dress-panel" id="shotlist-white">
+      <div class="video-card">
+        <div class="video-header white-dress"><div class="vh-left"><div class="video-num">White dress · Video 1</div><div class="video-title">"The garden reception" — shot list</div></div></div>
+        <div class="section-block">
+          <table class="shot-table">
+            <tr><th>#</th><th>Shot type</th><th>Location</th><th>What happens in frame</th><th>Notes</th></tr>
+            <tr><td class="shot-num">1</td><td><span class="type-badge">Wide</span></td><td><span class="loc-badge">Hotel garden</span></td><td>Reception in progress — people mingling, tables set, ambient joy</td><td>Establish the setting before Nitaz appears.</td></tr>
+            <tr><td class="shot-num">2</td><td><span class="type-badge">Medium</span></td><td><span class="loc-badge">Garden path</span></td><td>Nitaz walks into the garden, white dress in natural light</td><td>Natural light is the magic here. Aim for golden hour. Let the dress breathe.</td></tr>
+            <tr><td class="shot-num">3</td><td><span class="type-badge">Close-up</span></td><td><span class="loc-badge">Garden</span></td><td>Dress detail — fabric movement in the breeze, any embellishment or texture</td><td>White fabric in outdoor light is a natural beauty shot. Take time here.</td></tr>
+            <tr><td class="shot-num">4</td><td><span class="type-badge">Medium</span></td><td><span class="loc-badge">Guest area</span></td><td>Guests notice Nitaz — admiring looks, a woman leans to her friend and gestures</td><td>Subtle reactions. Not exaggerated — this video is the elegant one.</td></tr>
+            <tr><td class="shot-num">5</td><td><span class="type-badge">Medium</span></td><td><span class="loc-badge">Garden</span></td><td>Nitaz laughing with a guest, champagne glass in hand, completely at ease</td><td>Candid energy. She is not posing — she is living in the dress.</td></tr>
+            <tr><td class="shot-num">6</td><td><span class="type-badge">Wide</span></td><td><span class="loc-badge">Full garden</span></td><td>Nitaz in the foreground, the reception flowing behind her</td><td>End frame. The dress and the occasion in one shot.</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-header white-dress"><div class="vh-left"><div class="video-num">White dress · Video 2</div><div class="video-title">"The proposal dinner" — shot list</div></div></div>
+        <div class="section-block">
+          <table class="shot-table">
+            <tr><th>#</th><th>Shot type</th><th>Location</th><th>What happens in frame</th><th>Notes</th></tr>
+            <tr><td class="shot-num">1</td><td><span class="type-badge">Wide</span></td><td><span class="loc-badge">Restaurant</span></td><td>Nitaz and husband seated, romantic dinner in progress. Easy, loving mood.</td><td>Establish intimacy of the scene.</td></tr>
+            <tr><td class="shot-num">2</td><td><span class="type-badge">Close-up</span></td><td><span class="loc-badge">Table</span></td><td>His hand reaches into his jacket pocket</td><td>Hold on this. Let the audience realise what is happening.</td></tr>
+            <tr><td class="shot-num">3</td><td><span class="type-badge">Close-up</span></td><td><span class="loc-badge">Table</span></td><td>Ring box opens on the table</td><td>Clean still shot of the box. Then cut to her face.</td></tr>
+            <tr><td class="shot-num">4</td><td><span class="type-badge">Close-up</span></td><td><span class="loc-badge">Her face</span></td><td>Nitaz's reaction — hands over mouth, eyes wide, genuine surprise</td><td>This is the emotional core. Do not rush this shot.</td></tr>
+            <tr><td class="shot-num">5</td><td><span class="type-badge">Wide</span></td><td><span class="loc-badge">Restaurant</span></td><td>He gets on one knee. The restaurant reacts around them.</td><td>Pull back to show the full room witnessing the moment.</td></tr>
+            <tr><td class="shot-num">6</td><td><span class="type-badge">Medium</span></td><td><span class="loc-badge">Their table</span></td><td>She says yes. They embrace. She is radiant in the white dress.</td><td>Slow motion if possible. The dress and the emotion together.</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-header white-dress"><div class="vh-left"><div class="video-num">White dress · Video 3</div><div class="video-title">"She walked in and the room knew" — shot list</div></div></div>
+        <div class="section-block">
+          <table class="shot-table">
+            <tr><th>#</th><th>Shot type</th><th>Location</th><th>What happens in frame</th><th>Notes</th></tr>
+            <tr><td class="shot-num">1</td><td><span class="type-badge">Wide</span></td><td><span class="loc-badge">Hotel lobby</span></td><td>Nitaz enters the hotel lobby. Full length. White dress, confident stride.</td><td>Opening frame. Grand and clean. Lobby architecture as backdrop.</td></tr>
+            <tr><td class="shot-num">2</td><td><span class="type-badge">Close-up</span></td><td><span class="loc-badge">Lobby</span></td><td>People in the lobby — a double take, a quiet stare, a nudge</td><td>Three separate micro-reactions cut together quickly.</td></tr>
+            <tr><td class="shot-num">3</td><td><span class="type-badge">Wide</span></td><td><span class="loc-badge">Hotel garden</span></td><td>Nitaz walks through the garden, movement in the dress</td><td>Second location. Dress in natural light — contrast to the lobby interior.</td></tr>
+            <tr><td class="shot-num">4</td><td><span class="type-badge">Close-up</span></td><td><span class="loc-badge">Garden</span></td><td>Dress detail — fabric, movement, craftsmanship</td><td>The dress has its own hero moment in this video.</td></tr>
+            <tr><td class="shot-num">5</td><td><span class="type-badge">Medium</span></td><td><span class="loc-badge">Restaurant</span></td><td>Nitaz seated at a table, composed, a slight smile</td><td>Third location. She is everywhere. She belongs everywhere.</td></tr>
+            <tr><td class="shot-num">6</td><td><span class="type-badge">Wide</span></td><td><span class="loc-badge">Any</span></td><td>Final frame — Nitaz in full. Hold for 3 seconds.</td><td>Cut to end card: "Timeless elegance. Nitaz." White text on dark, or dark on white.</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SHOOT DAY OVERVIEW -->
+  <div class="view" id="view-shootday">
+    <div class="overview-grid">
+      <div class="ov-card"><div class="ov-label">Total videos</div><div class="ov-val">6</div></div>
+      <div class="ov-card"><div class="ov-label">Location</div><div class="ov-val">Hotel — lobby, restaurant, garden, room, corridor</div></div>
+      <div class="ov-card"><div class="ov-label">Lead talent</div><div class="ov-val">Nitaz + husband</div></div>
+      <div class="ov-card"><div class="ov-label">Supporting talent</div><div class="ov-val">Prop couple + 3–4 background extras</div></div>
+      <div class="ov-card"><div class="ov-label">Dress changes</div><div class="ov-val">2 — black then white (or reverse)</div></div>
+      <div class="ov-card"><div class="ov-label">Suggested shoot order</div><div class="ov-val">Hotel room first → restaurant → lobby → garden</div></div>
+    </div>
+
+    <div class="video-card">
+      <div class="video-header black-dress"><div class="vh-left"><div class="video-num">Shoot day</div><div class="video-title">Suggested schedule</div></div></div>
+      <div class="section-block">
+        <div class="timeline-block">
+          <div class="tl-row"><div class="tl-time">7:00 AM</div><div class="tl-desc">Arrive, set up, hair and makeup begins. Dress laid out for hotel room shot.<div class="tl-badge">Black dress first</div></div></div>
+          <div class="tl-row"><div class="tl-time">8:30 AM</div><div class="tl-desc">Hotel room shots — "Getting ready" video. Nitaz solo. No extras needed. Dress detail, mirror moment, corridor exit. Wrap in 45 min.</div></div>
+          <div class="tl-row"><div class="tl-time">9:30 AM</div><div class="tl-desc">Restaurant setup — prop couple and background extras briefed. "The dinner" video. All table scenes. Allow 90 min for full shot list.</div></div>
+          <div class="tl-row"><div class="tl-time">11:00 AM</div><div class="tl-desc">Garden or lobby — "Birthday entrance" video. Background extras in position. Entrance shots, reaction shots, friend greeting. 60 min.</div></div>
+          <div class="tl-row"><div class="tl-time">12:00 PM</div><div class="tl-desc">Break + dress change. Black dress wrapped. White dress hair and makeup refresh.<div class="tl-badge">White dress begins</div></div></div>
+          <div class="tl-row"><div class="tl-time">1:00 PM</div><div class="tl-desc">Garden — "Garden reception" video. Natural light most important here. Best light window is 1–3 PM. Prioritise this. 60–75 min.</div></div>
+          <div class="tl-row"><div class="tl-time">2:30 PM</div><div class="tl-desc">Restaurant — "Proposal dinner" video. Husband on set. Ring box prop ready. All reaction shots. 60 min.</div></div>
+          <div class="tl-row"><div class="tl-time">3:30 PM</div><div class="tl-desc">Brand film — "She walked in and the room knew." Three locations: lobby, garden, restaurant. Fast-moving. 45 min max.</div></div>
+          <div class="tl-row"><div class="tl-time">4:30 PM</div><div class="tl-desc">Wrap. Review footage. Pickup shots if needed. Release extras.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="video-card">
+      <div class="video-header white-dress"><div class="vh-left"><div class="video-num">Before the shoot</div><div class="video-title">Things to confirm in advance</div></div></div>
+      <div class="section-block">
+        <div class="props-grid">
+          <div class="prop-item"><i class="ti ti-users" aria-hidden="true"></i>Prop couple confirmed — brief them on the hand slap beat specifically</div>
+          <div class="prop-item"><i class="ti ti-diamond" aria-hidden="true"></i>Ring box prop sourced — does not need to be real</div>
+          <div class="prop-item"><i class="ti ti-candle" aria-hidden="true"></i>Table props — candles, glasses, flowers, anniversary card</div>
+          <div class="prop-item"><i class="ti ti-device-mobile" aria-hidden="true"></i>Background extras know to have phones out for birthday scene</div>
+          <div class="prop-item"><i class="ti ti-sun" aria-hidden="true"></i>Garden light window scouted — confirm golden hour time for the location</div>
+          <div class="prop-item"><i class="ti ti-shirt" aria-hidden="true"></i>Both dresses pressed and ready before 7 AM</div>
+          <div class="prop-item"><i class="ti ti-camera" aria-hidden="true"></i>Camera operator briefed on all 6 treatments before shoot day</div>
+          <div class="prop-item"><i class="ti ti-typography" aria-hidden="true"></i">End card designed in advance — "Timeless elegance. Nitaz."</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function switchView(id, btn) {
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+  document.getElementById('view-' + id).classList.add('active');
+  document.querySelectorAll('.tnav').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+}
+function switchDress(color, btn, view) {
+  const panels = document.querySelectorAll('#view-' + view + ' .dress-panel');
+  panels.forEach(p => p.classList.remove('active'));
+  document.getElementById(view + '-' + color).classList.add('active');
+  const tabs = btn.closest('.dress-tabs').querySelectorAll('.dtab');
+  tabs.forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+}
+</script>
